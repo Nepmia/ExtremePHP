@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {% block meta %}{% endblock %}
+    <link rel="icon" href="" type="image/png">
+    <link rel="shortcut icon" href="" type="image/png">
+
+    {# Font Awesome #}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    
+    {# main less rules #}
+    <link rel="stylesheet" media="screen" href="static/less/dist/main.css">
+    
+    
+    <title>{% block title %}{% endblock %}</title>
+    
+</head>
+
+<body>
+    
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="static/img/EPHP.svg" alt="Extreme PHP Logo" class="nav-logo">
+        </div>
+    
+        <section class="nav-content">
+            <ul class="nav-list">
+                <li class="nav-link uB"><p>Home</p></li>
+                <li class="nav-link uB"><p>Support</p></li>
+                <li class="nav-link uB"><p>About Us</p></li>
+            </ul>
+        </section>
+    </nav>
+
+    {% block tex_bg %}
+    <div class="bg-texture-container" style="background-image: url('static/img/retro-texture.jpg')"></div>
+    {% endblock tex_bg %}
+
+    <section id="content">
+        {% block content %}{% endblock %}
+    </section>
+    
+    <footer class="footer">
+        <div class="footer_content">
+            <ul class="footer-list">
+                <li class="footer-p-link uB"><p>Usefull links</p></li>
+                <li class="footer-link uB"><p>Home</p></li>
+                <li class="footer-link uB"><p>Support</p></li>
+                <li class="footer-link uB"><p>About Us</p></li>
+            </ul>
+        </div>
+
+        <div class="footer_copy uB">
+            © Extreme PHP 1967
+        </div>
+    </footer>
+
+    {# jquery #}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(() => {
+            let page_height = $(document).height()
+            $(".bg-texture-container").css("height", `${page_height}px`)
+        });
+    </script>
+
+</body>

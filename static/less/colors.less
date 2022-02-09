@@ -1,0 +1,28 @@
+// Color maps
+@colors: {
+    primary: #CD5327;
+    primary_lowop: #cd532733;
+    secondary: #E7842C;
+    accents: #F5BD6E;
+}
+
+@primary: #CD5327;
+@primary_lowop: #cd532733;
+@secondary: #E7842C;
+@accents: #F5BD6E;
+
+// Generate an usable class for color and background-color
+each(@colors, {
+    .@{key} {
+        color: @value;
+    }
+    .@{key}-bg {
+        background-color: @value;
+    }
+    .@{key}-h-bg:hover {
+        background-color: @value;
+    }
+    .@{key}-h:hover {
+        color: @value;
+    }
+});
