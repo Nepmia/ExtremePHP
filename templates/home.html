@@ -30,6 +30,86 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
             <div  alt="Don't code, use Extreme PHP!" class="article-img mg5" style="background-image: url('static/img/pc-no.png')"></div>
         </article>
 
+        <article class="article-flex" style="margin-top: 10%;">
+            <video controls autoplay loop class="article-img mg5" width=300 height=300>
+                <source src="static/video/tools.webm" type="video/webm">
+                Not supported.
+            </video>
+
+            <div class="article-wrapper mg5">
+                <h1 class="article-title uB tw">Easy to use tools.</h1>
+                <p class="article-content uR tw">
+                    Extreme PHP is a CMS. We created easy to use tools with one main thing in mind, you're one click away from creating your dream website.
+
+                    Extreme PHP allow you do so with our super easy tools.
+                </p>
+                {% with type="button-fluid", button_text="CHECK OUR TOOLS" %}
+                    {% include "button.html" %}
+                {% endwith %}
+            </div>
+
+        </article>
+
+        <section class="prices">
+            <h1 class="article-title uB tw tc">Pricings.</h1>
+
+            <div class="price-card-wrap">
+
+                <!-- Basic -->
+                <div class="price-card basic">
+                    <h1 class="price-title uR tw">Basic</h1>
+                    <div class="price uB tw">10$</div>
+                    <ul class="price-content">
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>All basic tools</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>yourname.e-php.com domain</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>1-month min support answer</p></li>
+                    </ul>
+                    {% with type="button-normal", button_text="ORDER" %}
+                        {% include "button.html" %}
+                    {% endwith %}
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card premium">
+                    <h1 class="price-title uR tw">Premium</h1>
+                    <div class="price uB tw">30$</div>
+                    <ul class="price-content">
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>All Basic advantage</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>All tools</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>Custom domain</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>1-week min support answer</p></li>
+                    </ul>
+                    {% with type="button-normal", button_text="ORDER" %}
+                        {% include "button.html" %}
+                    {% endwith %}
+                </div>
+
+                <!-- Extreme -->
+                <div class="price-card extreme">
+                    <h1 class="price-title uR tw">Extreme</h1>
+                    <div class="price uB tw">60$</div>
+                    <ul class="price-content">
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>All Basic and Premium advantage</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>Remove "Made with EPHP" badge</p></li>
+                        <li class="price-item uL tw"><span class="greenz">•</span><p>3 day min support answer</p></li>
+                    </ul>
+                    {% with type="button-normal", button_text="ORDER" %}
+                        {% include "button.html" %}
+                    {% endwith %}
+                </div>
+
+            </div>
+        </section>
+
+        <section class="question">
+            <form action="#">
+                <input type="text" class="question-input" placeholder="Type your question here.">
+                {% with type="button-normal", button_text="SEND" %}
+                        {% include "button.html" %}
+                {% endwith %}
+            </form>
+        </section>
+
     </section>
 
     {% endblock content %}
