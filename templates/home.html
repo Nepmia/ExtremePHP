@@ -6,8 +6,31 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
 
 {% block content %}
     <header>
-        <img src="static/img/header.png" alt="Header image" class="home-header">
+        <div style="background-image: url('static/img/header.png')" alt="Header image" class="home-header">
     </header>
+
+    <section class="actual-content" style="transform: translateY(-50px);">
+        {% with type="button-normal", button_text="START" %}
+            {% include "button.html" %}
+        {% endwith %}
+
+        <article class="article-flex">
+            <div class="wrapper-col">
+                <h1 class="article-title">Web for Everyone.</h1>
+                <p class="article-content">
+                    Here at Extreme PHP, we want to provide you an easy and fast method to express yourself.
+
+                    We have created many tools for you to use  so you can create high quality product similar to professional products, start making websites with Extreme PHP today!
+                </p>
+                {% with type="button-fluid", button_text="GET STARTED" %}
+                    {% include "button.html" %}
+                {% endwith %}
+            </div>
+
+            <img src="static/img/pc-no.png" alt="Don't code, use Extreme PHP!">
+        </article>
+
+    </section>
 
     {% endblock content %}
 

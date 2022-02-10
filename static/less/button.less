@@ -1,0 +1,50 @@
+.button-wing{
+    width: 20px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.button-body {
+    padding: 10px;
+    border: 3px solid @accents;
+    color: white;
+    .uB();
+    transition: 0.3s ease;
+    font-size: 1.5em;
+    order: 3;
+}
+.button-wing-lp {
+    order: 1;   
+}
+.button-wing-ls {
+    order: 2;   
+}
+.button-wing-rp {
+    order: 4;   
+}
+.button-wing-rs {
+    order: 5;   
+}
+.btn-right {
+    transition: 0.3s ease;
+    margin-left: 10px;
+}
+.btn-left {
+    transition: 0.3s ease;
+    margin-right: 10px;
+}
+.button-body:hover {
+    transition: 0.3s ease;
+    background-color: @accents;
+    cursor: pointer;
+}
+.button-body:hover ~ .btn-left{
+    transition: 0.3s ease;
+    margin-right: 20px;
+}
+.button-body:hover  ~ .btn-right{
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
