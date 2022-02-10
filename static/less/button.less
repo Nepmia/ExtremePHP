@@ -14,6 +14,7 @@
     transition: 0.3s ease;
     font-size: 1.5em;
     order: 3;
+    text-align: center;
 }
 .button-wing-lp {
     order: 1;   
@@ -40,11 +41,22 @@
     background-color: @accents;
     cursor: pointer;
 }
-.button-body:hover ~ .btn-left{
+.button-body:hover ~ .button-wing-lp{
     transition: 0.3s ease;
-    margin-right: 20px;
+    transform: translateX(-20px);
 }
-.button-body:hover  ~ .btn-right{
+.button-body:hover  ~ .button-wing-ls{
     transition: 0.3s ease;
-    margin-left: 20px;
+    transform: translateX(-10px);
+}
+.button-body:hover ~ .button-wing-rp{
+    transition: 0.3s ease;
+    transform: translateX(10px);
+}
+.button-body:hover  ~ .button-wing-rs{
+    transition: 0.3s ease;
+    transform: translateX(20px);
+}
+.button-fluid > .button-body {
+    width: -webkit-fill-available;
 }
