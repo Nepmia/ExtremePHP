@@ -6,7 +6,18 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
 
 {% block content %}
     <header>
-        <div alt="Header image" class="home-header" style="background-image: url('static/img/header.png');"></div>
+        <img src="static/img/header.png" alt="Header image" class="home-header">
     </header>
 
-{% endblock content %}
+    {% endblock content %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+$(document).ready(() => {
+    let page_height = $(document).height()
+    let page_width = $(document).width()
+    $(".bg-texture-container").css("height", `${page_height}px`)
+});
+</script>
+{% endblock scripts%}
