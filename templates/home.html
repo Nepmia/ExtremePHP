@@ -143,20 +143,17 @@ $(document).ready(() => {
     const php = document.getElementById("phpInWeb").getContext("2d");
     const ephp = document.getElementById("ephpInWeb").getContext("2d");
 
-    $.getJSON("/api?request=php").fail(function (data) {
-        console.log(data.labels)
-        createChart(data, php, "Usage of PHP in web-servers in 1966")
-    })
+    createChart(["Jan.", "Feb.", "Mar.", "May", "June", "Jully", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."], [4, 6, 7, 12, 14, 15, 20, 22, 24, 34, 43], php, "Usage of PHP in web-servers in 1966")
+    createChart(["Jan.", "Feb.", "Mar.", "May", "June", "Jully", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."], [10, 11, 13, 15, 17, 24, 27, 37, 55, 67, 80], ephp, "Usage of Extreme PHP on web in 1966")
 
-    function createChart(content, ctx, title) {
-        console.log(data)
+    function createChart(labels ,  data, ctx, title) {
         new Chart(ctx, {
             type: "line",
             data: {
-                labels: content.labels,
+                labels: labels,
                 datasets: [{
                     label: title,
-                    data: content.data,
+                    data: data,
                     borderColor: [
                         "#CD5327",
                     ],
