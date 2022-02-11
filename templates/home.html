@@ -39,7 +39,7 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
             <div class="article-wrapper mg5">
                 <h1 class="article-title uB tw">Easy to use tools.</h1>
                 <p class="article-content uR tw">
-                    Extreme PHP is a CMS. We created easy to use tools with one main thing in mind, you're one click away from creating your dream website.
+                    Extreme PHP is a CMS. We created easy to use tools with one main thing in mind, you"re one click away from creating your dream website.
 
                     Extreme PHP allow you do so with our super easy tools.
                 </p>
@@ -101,14 +101,18 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
             </div>
         </section>
 
-        <section class="stats">
+        <section class="stats" style="margin: 7% 0 7% 0">
             <h1 class="article-title uB tw tc">Statistics.</h1>
 
-            <section class="stats-container">
-                <canvas id="phpInWeb" width="400" height="400"></canvas>
-                <canvas id="ephpInWeb" width="400" height="400"></canvas>
+            <section class="s-wrap">
+                <div class="stats-container">
+                    <canvas id="phpInWeb" width="300" height="300" class="graph"></canvas>
+                </div>
+                <div class="stats-container">
+                    <canvas id="ephpInWeb" width="300" height="300" class="graph"></canvas>
+                </div>
             </section>
-            
+
         </section>
 
         <section class="question">
@@ -133,5 +137,43 @@ $(document).ready(() => {
     let page_width = $(document).width()
     $(".bg-texture-container").css("height", `${page_height}px`)
 });
+</script>
+
+<script>
+    const php = document.getElementById("phpInWeb").getContext("2d");
+    const ephp = document.getElementById("ephpInWeb").getContext("2d");
+
+    $.getJSON("/api?request=php").fail(function (data) {
+        console.log(data.labels)
+        createChart(data, php, "Usage of PHP in web-servers in 1966")
+    })
+
+    function createChart(content, ctx, title) {
+        console.log(data)
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: content.labels,
+                datasets: [{
+                    label: title,
+                    data: content.data,
+                    borderColor: [
+                        "#CD5327",
+                    ],
+                    borderWidth: 3,
+                    backgroundColor: "#cd532733",
+                    fill: {
+                        target: "origin",
+                        below: "rgba(205, 83, 39, 0.43)",
+                    },
+                    tension: 0.5,
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+            }
+        });     
+    }
+  
 </script>
 {% endblock scripts%}
