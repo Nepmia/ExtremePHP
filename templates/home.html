@@ -7,6 +7,9 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
 {% block content %}
     <header>
         <div style="background-image: url('static/img/header.png')" alt="Header image" class="home-header">
+            <img src="static/img/EPHP-white.svg" alt="EPHP Logo" class="ephp-head">
+            <h1 class="article-title uB tw">Web for Everyone.</h1>
+        </div>
     </header>
 
     <section class="actual-content" style="transform: translateY(-50px);">
@@ -31,7 +34,7 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
         </article>
 
         <article class="article-flex" style="margin-top: 10%;">
-            <video controls autoplay loop class="article-img mg5" width=300 height=300>
+            <video loop playsinline class="article-img mg5" width=300 height=300>
                 <source src="static/video/tools.webm" type="video/webm">
                 Not supported.
             </video>
@@ -127,6 +130,13 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
 
     </section>
 
+    <section class="bg-details">
+        <img src="static/img/tex1.svg" alt="Bg texture 1" class="bg-tex" id="tex1">
+        <img src="static/img/tex2.svg" alt="Bg texture 2" class="bg-tex" id="tex2">
+        <img src="static/img/tex3.svg" alt="Bg texture 3" class="bg-tex" id="tex3">
+        <img src="static/img/tex4.svg" alt="Bg texture 4" class="bg-tex" id="tex4">
+    </section>
+
     {% endblock content %}
 
 {% block scripts %}
@@ -135,7 +145,9 @@ Homepage - Extreme PHP, The best possible CMS. Web For Everyone.
 $(document).ready(() => {
     let page_height = $(document).height()
     let page_width = $(document).width()
+    let footer_height = $("footer").height()
     $(".bg-texture-container").css("height", `${page_height}px`)
+    $("footer").css("top", (page_height - footer_height))
 });
 </script>
 
@@ -172,5 +184,8 @@ $(document).ready(() => {
         });     
     }
   
+    $('.actual-content').onScrolledTo(0.5, function() {
+	    $("video").get(0).play()
+	});
 </script>
 {% endblock scripts%}
